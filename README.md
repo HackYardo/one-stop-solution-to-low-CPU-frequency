@@ -49,6 +49,6 @@ watch -n1 "grep \"^[c]pu MHz\" /proc/cpuinfo"
 ```
 
 ## Thanks To:
-[kitsunyan](https://github.com/kitsunyan/intel-undervolt) | 
-[DivyanshuVerma](https://github.com/DivyanshuVerma/throttlestop-linux) | 
-[Debian Wiki](https://wiki.debian.org/CpuFrequencyScaling)
+[Antonio Prcela, Roman Makarov](https://github.com/kitsunyan/intel-undervolt/issues/17) | 
+[Divyanshu Verma](https://github.com/DivyanshuVerma/throttlestop-linux) | 
+[Debian, Arch Wiki](https://wiki.debian.org/CpuFrequencyScaling)
