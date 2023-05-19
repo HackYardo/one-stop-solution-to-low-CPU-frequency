@@ -9,20 +9,20 @@ So I list all the solutions to save your time.
 
 ## 1. Some Hardware Wrong?
 
--[ ] Power Supply 
--[ ] Battery
--[ ] Fan
--[ ] Wind Tube
--[ ] etc
+-[x] Power Supply 
+-[x] Battery
+-[x] Fan
+-[x] Wind Tube
+-[x] etc
 
 ## 2. Remove Static Electricity
 
-[ ] Unplug ALL Supplies
-[ ] Then Hold Down PowerKey for 60 sec
+[x] Unplug ALL Supplies
+[x] Then Hold Down PowerKey for 60 sec
 
 ## 3. Reset and Update BIOS
-[ ] Click PowerKey and Hold Down F2 to Enter BIOS to Reset it
-[ ] Go to OEM(Acer Asus Dell...) Official Site to Update BIOS
+[x] Click PowerKey and Hold Down F2 to Enter BIOS to Reset it
+[x] Go to OEM(Acer Asus Dell...) Official Site to Update BIOS
 
 ## 4. Set CPU Frequency
 
