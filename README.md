@@ -8,21 +8,20 @@ When CPU be limited and runs at a low frequency, e.g. 0.4 or 0.8 GHz, it takes t
 So I list all the solutions to save your time.
 
 ## 1. Some Hardware Wrong?
-
--[x] Power Supply 
--[x] Battery
--[x] Fan
--[x] Wind Tube
--[x] etc
+  [x] Power Supply 
+  [x] Battery
+  [x] Fan
+  [x] Wind Tube
+  [x] etc
 
 ## 2. Remove Static Electricity
 
-[x] Unplug ALL Supplies
-[x] Then Hold Down PowerKey for 60 sec
+  [x] Unplug ALL Supplies
+  [x] Then Hold Down PowerKey for 60 sec
 
 ## 3. Reset and Update BIOS
-[x] Click PowerKey and Hold Down F2 to Enter BIOS to Reset it
-[x] Go to OEM(Acer Asus Dell...) Official Site to Update BIOS
+  [x] Click PowerKey and Hold Down F2 to Enter BIOS to Reset it
+  [x] Go to OEM(Acer Asus Dell...) Official Site to Update BIOS
 
 ## 4. Set CPU Frequency
 
