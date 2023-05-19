@@ -28,7 +28,7 @@ cpupower-gui
 ```bash
 watch -n1 "grep \"^[c]pu MHz\" /proc/cpuinfo"
 ```
-## 6. Secure Boot Disable?
+## 6. Secure Boot Disable? (Ready for MSR)
 ```bash
 sudo apt install mokutil -y
 sudo mokutil --sb-state
