@@ -3,7 +3,7 @@
 
 ## Why?
 When CPU be limited and runs at a low frequency, e.g. 0.4 or 0.8 GHz, it takes tanks of time to fix... ...if your OS is not Windows and can not run [ThrottleStop](https://www.techpowerup.com/download/techpowerup-throttlestop/).
-So I list all the solutions to save your time.
+So I list all the solutions together to save your time, here it is:
 
 ## 1. Some Hardware Wrong?
 Power Supply, Battery, Fan, Wind Tube, etc
@@ -20,8 +20,8 @@ Power Supply, Battery, Fan, Wind Tube, etc
 ```bash
 sudo update -y
 sudo apt install cpupower-gui -y
-cpupower-gui  
-# Max Frequency == Base Frequency maybe Better
+cpupower-gui
+# Max Frequency == Base Frequency, perhaps better
 ```
 
 ## 5. Set Successfully?
@@ -45,7 +45,10 @@ sudo wrmsr 0x1FC 2359388
 
 ## 8. Everything Fine?
 ```bash
-watch -n1 "grep \"^[c]pu MHz\" /proc/cpuinfo"
+sudo apt install powerstat cpu-x -y
+sudo powerstat -R
+# ctrl c to get Watts' Summary and quit
+sudo cpu-x
 ```
 
 ## Thanks To:
