@@ -35,7 +35,7 @@ sudo mokutil --sb-state
 ```
 ## 6.5. Disable Secure Boot in BIOS
 
-## 7. Reset CPU via MSR
+## 7. Reset CPU (Disable BD PROCHOT) via MSR
 ```bash
 sudo apt install msr-tools -y
 sudo modprobe msr
