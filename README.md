@@ -3,7 +3,7 @@
 
 ## Why?
 When CPU be limited and runs at a low frequency, e.g. 0.4 or 0.8 GHz, it takes tanks of time to fix... ...if your OS is not Windows and can not run [ThrottleStop](https://www.techpowerup.com/download/techpowerup-throttlestop/).
-So I list all the solutions together to save your time, here it is:
+So I combine all the solutions together to save your time, here it is:
 
 ## 1. Some Hardware Wrong?
 Power Supply, Battery, Fan, Wind Tube, etc
@@ -47,7 +47,7 @@ $ sudo wrmsr 0x1FC 2359388
 ```shell
 $ sudo apt install powerstat cpu-x -y
 $ sudo powerstat -R
-# ctrl c to get Watts' Summary and quit
+# [ctrl c] to get Watts' Summary and quit
 $ sudo cpu-x
 ```
 
@@ -55,15 +55,17 @@ $ sudo cpu-x
 ```shell
 $ touch fixCPU.sh
 $ nano fixCPU.sh
-
+# edit in nano
 sudo modprobe msr
 sudo wrmsr 0x1FC 2359388
 sudo cpupower frequency-set -r -d 0.4GHz -u 1.6GHz -g powersave
 watch -n1 "grep \"^[c]pu MHz\" /proc/cpuinfo"
-
+# [ctrl x] to exit nano
+# [y] to save modified buffer 
+# [enter] to write in Linux-ish Format 
 $ chmod +x fixCPU.sh
 ```
-After every boot, don't forget `./fixcpu.sh`.
+After every boot, don't forget `./fixCPU.sh`.
 
 ## Thanks To:
 [Antonio Prcela, Roman Makarov](https://github.com/kitsunyan/intel-undervolt/issues/17) |
