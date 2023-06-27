@@ -19,8 +19,8 @@ Power Supply, Battery, Fan, Wind Tube, etc
 ## 4. Set CPU Frequency
 ```bash
 sudo update -y
-sudo apt install cpupower-gui -y
-cpupower-gui
+sudo apt install linux-cpupower -y
+sudo cpupower frequency-set -r -d 0.4GHz -u 1.6GHz -g powersave
 # Max Frequency == Base Frequency, perhaps better
 ```
 
@@ -51,7 +51,19 @@ sudo powerstat -R
 sudo cpu-x
 ```
 
+## Put in one file for fast operation
+touch fixCPU.sh
+nano fixCPU.sh:
+```bash
+sudo modprobe msr
+sudo wrmsr 0x1FC 2359388
+sudo cpupower frequency-set -r -d 0.4GHz -u 1.6GHz -g powersave
+watch -n1 "grep \"^[c]pu MHz\" /proc/cpuinfo"
+```
+chmod +x fixCPU.sh
+After every boot, don't forget `./fixcpu.sh`.
+
 ## Thanks To:
-[Antonio Prcela, Roman Makarov](https://github.com/kitsunyan/intel-undervolt/issues/17) | 
-[Divyanshu Verma](https://github.com/DivyanshuVerma/throttlestop-linux) | 
+[Antonio Prcela, Roman Makarov](https://github.com/kitsunyan/intel-undervolt/issues/17) |
+[Divyanshu Verma](https://github.com/DivyanshuVerma/throttlestop-linux) |
 [Debian, Arch Wiki](https://wiki.debian.org/CpuFrequencyScaling)
