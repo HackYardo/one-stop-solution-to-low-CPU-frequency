@@ -17,50 +17,52 @@ Power Supply, Battery, Fan, Wind Tube, etc
 - Go to OEM(Acer Asus Dell...) Official Site to Update BIOS
 
 ## 4. Set CPU Frequency
-```bash
-sudo update -y
-sudo apt install linux-cpupower -y
-sudo cpupower frequency-set -r -d 0.4GHz -u 1.6GHz -g powersave
-# Max Frequency == Base Frequency, perhaps better
+```shell
+$ sudo update -y
+$ sudo apt install linux-cpupower -y
+$ sudo cpupower frequency-set -r -d 0.4GHz -u 1.6GHz -g powersave
 ```
+Max Frequency == Base Frequency, perhaps better
 
 ## 5. Set Successfully?
-```bash
-watch -n1 "grep \"^[c]pu MHz\" /proc/cpuinfo"
+```shell
+$ watch -n1 "grep \"^[c]pu MHz\" /proc/cpuinfo"
 ```
 ## 6. Secure Boot Disable? (Ready for MSR)
-```bash
-sudo apt install mokutil -y
-sudo mokutil --sb-state
+```shell
+$ sudo apt install mokutil -y
+$ sudo mokutil --sb-state
 ```
 ## 6.5. Disable Secure Boot in BIOS
 
 ## 7. Reset CPU (Disable BD PROCHOT) via MSR
-```bash
-sudo apt install msr-tools -y
-sudo modprobe msr
-sudo rdmsr -a -d 0x1FC  # 2359389
-sudo wrmsr 0x1FC 2359388
+```shell
+$ sudo apt install msr-tools -y
+$ sudo modprobe msr
+$ sudo rdmsr -a -d 0x1FC  # 2359389
+$ sudo wrmsr 0x1FC 2359388
 ```
 
 ## 8. Everything Fine?
-```bash
-sudo apt install powerstat cpu-x -y
-sudo powerstat -R
+```shell
+$ sudo apt install powerstat cpu-x -y
+$ sudo powerstat -R
 # ctrl c to get Watts' Summary and quit
-sudo cpu-x
+$ sudo cpu-x
 ```
 
 ## Put in one file for fast operation
-touch fixCPU.sh
-nano fixCPU.sh:
-```bash
+```shell
+$ touch fixCPU.sh
+$ nano fixCPU.sh
+
 sudo modprobe msr
 sudo wrmsr 0x1FC 2359388
 sudo cpupower frequency-set -r -d 0.4GHz -u 1.6GHz -g powersave
 watch -n1 "grep \"^[c]pu MHz\" /proc/cpuinfo"
+
+$ chmod +x fixCPU.sh
 ```
-chmod +x fixCPU.sh
 After every boot, don't forget `./fixcpu.sh`.
 
 ## Thanks To:
